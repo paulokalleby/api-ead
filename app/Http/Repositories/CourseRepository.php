@@ -6,6 +6,7 @@ use App\Models\Course;
 
 class CourseRepository
 {
+    
     protected $entity;
     
     public function __construct(Course $model)
@@ -13,12 +14,12 @@ class CourseRepository
         $this->entity = $model;
     }
 
-    public function getAllCourses()
+    public function getCourses()
     {
         return $this->entity->all();
     }
 
-    public function getCourse(string $identify)
+    public function getCourseById(string $identify)
     {
         return $this->entity->findOrFail($identify);
     }
